@@ -12,11 +12,13 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   padding: 0 40px;
-  background: #67768e;
+  background: #0D1117;
 }
 
 .bg-my-primary {
   background: #cacfd8;
+  background: #67768e;
+  
 }
 
 header {
@@ -25,8 +27,8 @@ header {
 
 button {
   width: 100px;
-  padding: 10px;
-  background: steelblue;
+  padding: 5px;
+  background: #0D1117;
   color: white;
   border-radius: 5px;
   border: none;
