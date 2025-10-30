@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+@import 'tailwindcss';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  padding: 0 40px;
+  background: #67768e;
+}
+
+.bg-my-primary {
+  background: #cacfd8;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100px;
+  padding: 10px;
+  background: steelblue;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+input[type='text'] {
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px #ccc solid;
+  height: 35px; /*! NB*/
+  margin-right: 5px;
+}
+
+#todo-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#todo-list > div {
+  border: 1px #666 solid;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.done {
+  background: #ccc;
+}
