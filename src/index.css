@@ -11,14 +11,12 @@
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  padding: 0 40px;
-  background: #0D1117;
+  padding: 1rem;
+  background: #0d1117;
 }
 
 .bg-my-primary {
-  background: #cacfd8;
   background: #67768e;
-  
 }
 
 header {
@@ -28,7 +26,6 @@ header {
 button {
   width: 100px;
   padding: 5px;
-  background: #0D1117;
   color: white;
   border-radius: 5px;
   border: none;
@@ -58,4 +55,11 @@ input[type='text'] {
 
 .done {
   background: #ccc;
+}
+
+@media (max-width: 300px) {
+  body {
+    background: #67768e;
+    opacity: 0;
+  }
 }
