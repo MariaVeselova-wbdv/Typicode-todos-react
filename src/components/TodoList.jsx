@@ -1,6 +1,6 @@
 const TodoList = () => {
   return ( 
-    <div id="todo-list"></div>
+    <div id="todo-list" className="cursor-pointer"></div>
    );
 }
  

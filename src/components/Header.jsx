@@ -1,7 +1,11 @@
+import { LuListTodo } from 'react-icons/lu';
+
 const Header = () => {
+ 
   return (
-    <header>
-      <h1>React Typicode Todos</h1>
+    <header className="flex justify-center">
+      <LuListTodo size={20}/>
+      <h1>Todo App</h1>
     </header>
   );
 };

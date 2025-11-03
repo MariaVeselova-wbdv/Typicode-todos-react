@@ -20,7 +20,18 @@ body {
 }
 
 header {
-  margin-bottom: 20px;
+  margin-bottom: 0.1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* justify-content: center; */
+  padding: 0.5rem;
+}
+
+h1 {
+  font-size: large;
+  font-weight: 600;
+  /* color: #573498; */
 }
 
 button {
@@ -50,7 +61,6 @@ input[type='text'] {
   border: 1px #666 solid;
   padding: 10px;
   margin: 5px;
-  cursor: pointer;
 }
 
 .done {
