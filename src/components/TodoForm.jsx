@@ -1,10 +1,27 @@
 import { useState } from 'react';
 
-const TodoForm = () => {
-  const [todo, setTodo] = useState();
+const TodoForm = ({todos, setTodos}) => {
+  // * Todo
+  const [todo, setTodo] = useState('');
+
+  // Validation
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const trimmedTodo = todo.trim();
+    if(!trimmedTodo) return;
+  // New todo
+    const newTodo = {id: Date.now(), todo: trimmedTodo}
+  
+  // Add todos to submition state
+    
+    setTodos(prevTodos => [newTodo, ...prevTodos])
+    
+  // Reset todo on submition
+    setTodo('');
+  }
 
   return (
-    <form id='todo-form' className='mx-auto'>
+    <form onSubmit={handleSubmit} id='todo-form' className='mx-auto'>
       <div className='flex justify-center'>
         <input
           className='focus:outline-none'

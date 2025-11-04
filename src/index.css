@@ -67,7 +67,7 @@ input[type='text'] {
   background: #ccc;
 }
 
-@media (max-width: 300px) {
+@media (max-width: 361px) {
   body {
     background: #67768e;
     opacity: 0;
