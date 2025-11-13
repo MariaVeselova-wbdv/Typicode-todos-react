@@ -9,29 +9,31 @@ const TodoForm = ({todos, setTodos}) => {
     e.preventDefault();
     const trimmedTodo = todo.trim();
     if(!trimmedTodo) return;
-  // New todo
-    const newTodo = {id: Date.now(), todo: trimmedTodo}
+
+  // Create new todo
+    const newTodo = {id: Date.now(), todo: trimmedTodo};
   
   // Add todos to submition state
-    
-    setTodos(prevTodos => [newTodo, ...prevTodos])
+     setTodos(prevTodos => [newTodo, ...prevTodos]);
     
   // Reset todo on submition
     setTodo('');
+
+ 
   }
 
   return (
     <form onSubmit={handleSubmit} id='todo-form' className='mx-auto'>
-      <div className='flex justify-center'>
+      <div className='justify-center text-white'>
         <input
           className='focus:outline-none'
           type='text'
           id='todo'
-          placeholder=' Add Todo'
+          placeholder='Add Todo'
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
         />
-        <button className='bg-black hover:bg-gray-800' type='submit'>
+        <button className='bg-black hover:bg-gray-800' type='submit' >
           Add ➕
         </button>
       </div>
