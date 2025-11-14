@@ -2,6 +2,12 @@
 
 @import 'tailwindcss';
 
+:root{
+  --my-primary: #67768e;
+  --my-dark:  #0d1117;
+}
+
+
 *,
 *:before,
 *:after {
@@ -12,11 +18,16 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   padding: 1rem;
-  background: #0d1117;
+  background: var(--my-dark) !important;
+ 
 }
 
 .bg-my-primary {
-  background: #67768e;
+  background: var(--my-primary);
+}
+
+.bg-my-dark {
+  background: var(--my-dark);
 }
 
 header {
@@ -24,31 +35,12 @@ header {
   display: flex;
   align-items: center;
   gap: 5px;
-  /* justify-content: center; */
   padding: 0.5rem;
 }
 
 h1 {
   font-size: large;
   font-weight: 600;
-  /* color: #573498; */
-}
-
-button {
-  width: 90px;
-  padding: 5px;
-  color: white;
-  border-radius: 5px;
-  border: none;
-}
-
-input[type='text'] {
-  width: 300px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px #ccc solid;
-  height: 35px; /*! NB*/
-  margin-right: 5px;
 }
 
 #todo-list {
@@ -67,8 +59,7 @@ input[type='text'] {
   background: #ccc;
 }
 
-
-@media (max-width: 361px) {
+@media (max-width: 475px) {
   body {
     background: #67768e;
     opacity: 0;

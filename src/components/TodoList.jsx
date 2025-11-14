@@ -5,9 +5,9 @@ const TodoList = ({ todos }) => {
     )
   }
   return ( 
-    <div className="mt-4 cursor-pointer ">
+    <div className="mt-4 cursor-pointer">
       { todos.map((todo) => (
-        <div key={todo.id} className="ml-16 flex w-3/4 mb-2 cursor-pointer p-1 text-gray-800 rounded shadow-md border-l-4">
+        <div key={todo.id} className="w-full flex mb-2 cursor-pointer p-1 text-gray-800 rounded shadow-md border-l-4">
           <h3 className="text-sm font-medium">{todo.todo}</h3>
         </div>
       ) )

@@ -8,14 +8,11 @@ const App = () => {
   const [todos, setTodos] = useState([]);
 
   return (
-    <>
-      <div className='max-w-xl mx-auto mt-10 p-6 bg-my-primary rounded-lg shadow-lg text-center'>
-        <Header />
-        <TodoForm todos={todos} setTodos={setTodos} />
-        <TodoList todos={todos}  />
-        
-      </div>
-    </>
+    <div className='max-w-lg mx-auto mt-10 p-6 rounded-lg shadow-lg bg-my-primary'>
+      <Header />
+      <TodoForm todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} />
+    </div>
   );
 };
 
