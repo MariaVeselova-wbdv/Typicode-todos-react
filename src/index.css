@@ -4,6 +4,7 @@
 
 :root{
   --my-primary: #67768e;
+  --my-secondary: #6E7D96;
   --my-dark:  #0d1117;
 }
 
@@ -24,6 +25,9 @@ body {
 
 .bg-my-primary {
   background: var(--my-primary);
+}
+.bg-my-secondary {
+  background: var(--my-secondary);
 }
 
 .bg-my-dark {

@@ -33,14 +33,15 @@ const TodoForm = ({ todos, setTodos }) => {
             onChange={(e) => setTodo(e.target.value)}
           />
         </div>
-      </form>
-
-      <button
+        <button
         onClick={() => {}}
-        className='text-white w-full border-none text-gray-800 py-1 rounded-lg cursor-pointer mb-4 bg-gray-800 hover:bg-gray-700 transition'
+        className='text-white w-full border-none text-gray-800 py-1 rounded-lg cursor-pointer mt-4 bg-gray-800 hover:bg-gray-700 transition'
       >
         Add ➕
       </button>
+      </form>
+
+     
     </>
   );
 };
