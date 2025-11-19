@@ -47,16 +47,8 @@ h1 {
   font-weight: 600;
 }
 
-#todo-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-#todo-list > div {
-  border: 1px #666 solid;
-  padding: 10px;
-  margin: 5px;
+p{
+  margin-top: -5px;
 }
 
 .done {

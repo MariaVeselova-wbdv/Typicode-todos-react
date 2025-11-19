@@ -25,7 +25,7 @@ const TodoForm = ({ todos, setTodos }) => {
       <form onSubmit={handleSubmit} id='todo-form' className='mb-6 mx-auto'>
         <div className='justify-center text-white'>
           <input
-            className='w-full p-2 border border-gray-400 rounded-lg focus:outline-none'
+            className='mt-1 mb-1 w-full p-1 border border-gray-400 rounded-lg focus:outline-none'
             type='text'
             id='todo'
             placeholder='Add Todo'
@@ -35,7 +35,7 @@ const TodoForm = ({ todos, setTodos }) => {
         </div>
         <button
         onClick={() => {}}
-        className='text-white w-full border-none text-gray-800 py-1 rounded-lg cursor-pointer mt-4 bg-gray-800 hover:bg-gray-700 transition'
+        className='text-white w-full border-none text-gray-800 py-1 rounded-lg cursor-pointer mt-5 bg-gray-800 hover:bg-gray-700 transition'
       >
         Add ➕
       </button>
