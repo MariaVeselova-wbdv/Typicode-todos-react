@@ -14,50 +14,53 @@ const App = () => {
     if (confirmDelete) {
       try {
         await fetch(apiUrl + '?_limit=5', {
-          method: 'DELETE'
+          method: 'DELETE',
         });
 
-      setTodos(todos.filter((todo) => todo.id !== id));
+        setTodos(todos.filter((todo) => todo.id !== id));
       } catch (error) {
         console.error('Error deleting todo:', error);
       }
     }
   };
 
+  const toggleCompleted = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              completed: !todo.completed,
+            }
+          : todo
+      )
+    );
+  };
   // * API
-  // useEffect(() => {
-  //   const getTodos = () => {
-  //     fetch(apiUrl + '?_limit=5')
-  //       .then((res) => res.json())
-  //       .then((data) => setTodos(data))
-
-  //       .catch((error) => console.error('Error fetching todos:', error));
-  //   };
-
-  //   getTodos();
-  // }, []);
 
   useEffect(() => {
-    const getTodos = async() => {
-      try{
-        const res = await fetch(apiUrl + '?_limit=5')
+    const getTodos = async () => {
+      try {
+        const res = await fetch(apiUrl + '?_limit=5');
         const data = await res.json();
-        setTodos(data)
-      } catch(error){
-          console.error('Error fetching todos', error)
+        setTodos(data);
+      } catch (error) {
+        console.error('Error fetching todos', error);
       }
     };
 
-    getTodos()
+    getTodos();
   }, []);
-
-
 
   return (
     <div className='max-w-lg mx-auto mt-10 p-6 rounded-lg shadow-lg bg-my-primary'>
       <Header />
       <TodoForm todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <TodoList
+        todos={todos}
+        deleteTodo={deleteTodo}
+        toggleCompleted={toggleCompleted}
+      />
     </div>
   );
 };
