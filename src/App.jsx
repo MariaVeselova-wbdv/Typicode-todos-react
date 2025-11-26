@@ -4,7 +4,9 @@ import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
 const App = () => {
-  const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+  // const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+
+  const apiSrc = './todos.json'  
 
   //* Todos
   const [todos, setTodos] = useState([]);
@@ -13,7 +15,7 @@ const App = () => {
     const confirmDelete = window.confirm('Are you sure to delete?');
     if (confirmDelete) {
       try {
-        await fetch(apiUrl + '?_limit=5', {
+        await fetch(apiSrc, {
           method: 'DELETE',
         });
 
@@ -37,17 +39,30 @@ const App = () => {
     );
   };
   // * API
-
   useEffect(() => {
     const getTodos = async () => {
       try {
-        const res = await fetch(apiUrl + '?_limit=5');
+        const res = await fetch(apiSrc);
         const data = await res.json();
-        setTodos(data);
+        setTodos(data.slice(0, 7));
       } catch (error) {
         console.error('Error fetching todos', error);
       }
     };
+
+  // useEffect(() => {
+  //   const getTodos = async () => {
+  //     try {
+  //       const res = await fetch(apiUrl + '?_limit=5');
+  //       const data = await res.json();
+  //       setTodos(data);
+  //     } catch (error) {
+  //       console.error('Error fetching todos', error);
+  //     }
+  //   };
+
+  //   getTodos();
+  // }, []);
 
     getTodos();
   }, []);
