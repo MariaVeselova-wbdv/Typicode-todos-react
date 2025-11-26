@@ -6,7 +6,9 @@ import TodoList from './components/TodoList';
 const App = () => {
   // const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
-  const apiSrc = './todos.json'  
+  // const apiSrc = './todos.json'
+
+  const API_BASE = 'http://localhost:5001';
 
   //* Todos
   const [todos, setTodos] = useState([]);
@@ -15,7 +17,7 @@ const App = () => {
     const confirmDelete = window.confirm('Are you sure to delete?');
     if (confirmDelete) {
       try {
-        await fetch(apiSrc, {
+        await fetch(`${API_BASE}/todos/${id}`, {
           method: 'DELETE',
         });
 
@@ -25,7 +27,6 @@ const App = () => {
       }
     }
   };
-
   const toggleCompleted = (id) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
@@ -42,27 +43,27 @@ const App = () => {
   useEffect(() => {
     const getTodos = async () => {
       try {
-        const res = await fetch(apiSrc);
+        const res = await fetch(`${API_BASE}/todos?_limit=5`);
         const data = await res.json();
-        setTodos(data.slice(0, 7));
+        setTodos(data);
       } catch (error) {
         console.error('Error fetching todos', error);
       }
     };
 
-  // useEffect(() => {
-  //   const getTodos = async () => {
-  //     try {
-  //       const res = await fetch(apiUrl + '?_limit=5');
-  //       const data = await res.json();
-  //       setTodos(data);
-  //     } catch (error) {
-  //       console.error('Error fetching todos', error);
-  //     }
-  //   };
+    // useEffect(() => {
+    //   const getTodos = async () => {
+    //     try {
+    //       const res = await fetch(apiUrl + '?_limit=5');
+    //       const data = await res.json();
+    //       setTodos(data);
+    //     } catch (error) {
+    //       console.error('Error fetching todos', error);
+    //     }
+    //   };
 
-  //   getTodos();
-  // }, []);
+    //   getTodos();
+    // }, []);
 
     getTodos();
   }, []);
